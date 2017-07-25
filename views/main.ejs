@@ -1,0 +1,157 @@
+<% include partials/header %>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Bizent</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About me</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    
+    <div class="container">
+
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <br>
+                <h1 class="page-header">People
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Family Row -->
+        <h2>Family</h2>
+        <div class="row">
+            <% for(var i = 0; i < family.length; i++) { %>
+                <div class="col-md-4 portfolio-item">
+                    <h3>
+                    <a href="#"><%= family[i].name %></a>
+                    </h3>
+                <p><b>Email:</b> <%= family[i].email%></p>
+                <p><b>Cell:</b> <%= family[i].cell%></p>
+                <%if(family[i].family.length != 0){ %>
+                <p><b>Family: </b></p>
+                <%}%>
+                <% for(var j = 0; j < family[i].family.length; j++) { %>
+                <p><%=family[i].family[j].relation%> - <%=family[i].family[j].name %> </p>
+                <%}%>
+                </div>
+          <%  } %>
+        </div>
+        <h2>Colleagues</h2>
+        <div class="row">
+            <% for(var i = 0; i < colleagues.length; i++) { %>
+                <div class="col-md-4 portfolio-item">
+                    <h3>
+                    <a href="#"><%= colleagues[i].name %></a>
+                    </h3>
+                <p><b>Email:</b> <%= colleagues[i].email%></p>
+                <p><b>Cell:</b> <%= colleagues[i].cell%></p>
+
+                </div>
+          <%  } %>
+        </div> 
+        <h2>Recruiters</h2>
+        <div class="row">
+            <% for(var i = 0; i < careerFair.length; i++) { %>
+                <div class="col-md-4 portfolio-item">
+                    <h3>
+                    <a href="#"><%= careerFair[i].name %></a>
+                    </h3>
+                <p><b>Company:</b> <%= careerFair[i].company%></p>
+                <p><b>Job title:</b> <%= careerFair[i].jobTitle%></p>
+                <p><b>Personality:</b> <%= careerFair[i].personality%></p>
+                <p><b>Liked about me:</b> <%= careerFair[i].likedAboutMe%></p>
+                <h4><u>Appearance</u>:</h4>
+                <p><b>Skin color:</b> <%= careerFair[i].skinColor%></p>
+                <p><b>Hair:</b> <%= careerFair[i].hair%></p>
+                </div>
+          <%  } %>
+        </div> 
+        <h2>Potential Partners</h2>
+        <div class="row">
+            <% for(var i = 0; i < potentialPartners.length; i++) { %>
+                <div class="col-md-4 portfolio-item">
+                    <h3>
+                    <a href="#"><%= potentialPartners[i].name %></a>
+                    </h3>
+                <h4><b><u>About</u></b>:</h4>
+                <p><b>Interest:</b> <%= potentialPartners[i].interest%></p>
+                <p><b>Experience:</b> <%= potentialPartners[i].experience%></p>
+                <p><b>Qualities:</b> <%= potentialPartners[i].qualities%></p>
+                <p><b>Potential Position:</b> <%= potentialPartners[i].position%></p>
+                <h4><u>Contact</u>:</h4>
+                <p><b>Email:</b> <%= potentialPartners[i].email%></p>
+                <p><b>Cell:</b> <%= potentialPartners[i].cell%></p>
+                </div>
+          <%  } %>
+        </div> 
+        </div>
+        <!--<hr>-->
+
+        <!-- Pagination -->
+        <!--<div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>-->
+        <!-- /.row -->
+
+        <hr>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+<% include partials/footer %>
+</body>
